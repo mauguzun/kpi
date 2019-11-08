@@ -52,8 +52,8 @@
             <ngx-charts-advanced-pie-chart [view]=""
              [animations]="true"
               [results]="single" 
-              [label]="value"
-                (select)="select($event)">
+           
+                (select)="onSelect($event)">
             </ngx-charts-advanced-pie-chart>
         </mat-card-content>
         <mat-card-actions>
@@ -72,7 +72,7 @@
 
 
         <mat-card-content class="card-content">
-            <ngx-charts-bar-vertical-2d (select)="select($event)" [results]="multi"
+            <ngx-charts-bar-vertical-2d (select)="onSelect($event)" [results]="multi"
              
                [legend]="true"></ngx-charts-bar-vertical-2d>
 
@@ -82,7 +82,7 @@
             <mat-form-field>
                 <mat-label>It team </mat-label>
                 <mat-select>
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                    <mat-option *ngFor="let food of [foods]" [value]="food.value">
                         {{food.value}}
                     </mat-option>
                 </mat-select>

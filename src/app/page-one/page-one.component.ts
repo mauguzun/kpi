@@ -25,7 +25,7 @@ export class PageOneComponent implements OnInit {
 
   ngOnInit() {
   }
-  select() {
+  onSelect(event:Event) {
     alert('We show all data !');
      
   }
