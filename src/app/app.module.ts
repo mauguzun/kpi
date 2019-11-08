@@ -10,23 +10,39 @@ import {
   MatListModule,
   MatProgressSpinnerModule,
   MatGridListModule,
-  MatCheckboxModule, MatSidenavModule, MatIconModule, MatCardModule, MatToolbarModule
+  MatCheckboxModule, MatSidenavModule, MatIconModule, MatCardModule, MatToolbarModule, MatSelectModule, MatSnackBarModule
 } from '@angular/material';
-import { FirsPageComponent } from './firs-page/firs-page.component';
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+
+import { PageOneComponent } from './page-one/page-one.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirsPageComponent
+    PageOneComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MatGridListModule, MatProgressSpinnerModule, MatListModule, MatButtonModule, MatCheckboxModule, MatSidenavModule, MatIconModule, MatToolbarModule, MatCardModule,
+    MatGridListModule,
+    MatProgressSpinnerModule,
+    MatListModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatSelectModule, MatSnackBarModule,
+    NgxChartsModule
 
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
