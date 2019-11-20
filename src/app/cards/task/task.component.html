@@ -1,0 +1,19 @@
+
+
+<mat-card class="row-card">
+    <app-header
+     [title]="this.service.title"
+     [subtitle]="this.service.subtitle"
+     ></app-header>
+    <mat-card-content class="card-content">
+        <ngx-charts-pie-chart [view]="" (select)="onSelect($event)" [animations]="true" 
+        [results]="this.service.dataArray"
+            [legend]="true" [explodeSlices]="true" [labels]="true">
+        </ngx-charts-pie-chart>
+    </mat-card-content>
+
+  <app-footer
+  [selectArray]="this.service.selectArray"
+  ></app-footer>
+</mat-card>
+

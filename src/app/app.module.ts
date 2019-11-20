@@ -17,12 +17,20 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 import { PageOneComponent } from './page-one/page-one.component';
+import { PageTwoComponent } from './page-two/page-two.component';
+import { HeaderComponent } from './card/header/header.component';
+import { FooterComponent } from './card/footer/footer.component';
+import { TaskComponent } from './cards/task/task.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PageOneComponent,
+    PageTwoComponent,
+    HeaderComponent,
+    FooterComponent,
+    TaskComponent,
 
   ],
   imports: [

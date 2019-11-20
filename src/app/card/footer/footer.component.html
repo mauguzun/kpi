@@ -1,0 +1,12 @@
+<mat-card-actions>
+
+    <mat-form-field class="full-width">
+        <mat-label> Plese select </mat-label>
+        <mat-select>
+            <mat-option *ngFor="let onerow of selectArray" [value]="onerow.value">
+                {{onerow.text}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</mat-card-actions>
