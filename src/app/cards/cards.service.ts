@@ -5,16 +5,22 @@ import { Injectable } from '@angular/core';
 })
 export class CardsService {
 
-
+ 
+  public loader =  true;
   public title: string;
   public subtitle: string;
-  public dataArray: { "name": string; "value": number; }[];
-  public selectArray =  [
+  public dataArray: any[];
+
+  public selectArray = [
     { value: null, text: "can`t" }
   ]
   constructor() { }
 
-  public  onSelect(){
-    
+  public onSelect() {
+
+  }
+
+  public onSelected($event) {
+    console.log($event.value);
   }
 }

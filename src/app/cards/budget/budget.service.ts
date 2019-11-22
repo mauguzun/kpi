@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
 import { CardsService } from '../cards.service';
-import { tasks } from '../data';
+import { budgets } from '../data';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService extends CardsService {
+export class BudgetService extends CardsService {
 
 
   constructor() {
     super();
 
-    
-    this.dataArray = tasks;
-    this.title = 'Task';
-    this.subtitle = 'Total Tasks';
+    this.dataArray = budgets;
+    this.title = 'Budget';
+    this.subtitle = 'Budget prevision';
 
 
     this.loader = false;
-
   }
 
 

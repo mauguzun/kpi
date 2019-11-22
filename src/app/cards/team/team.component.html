@@ -1,0 +1,18 @@
+<mat-card class="row-card">
+        <app-header [title]="this.service.title" [subtitle]="this.service.subtitle"></app-header>
+    
+        <mat-card-content class="card-content">
+    
+    
+            <app-loader *ngIf="service.loader ;else chart"></app-loader>
+    
+            <ng-template #chart>  
+    
+                <ngx-charts-pie-chart [view]="" (select)="onSelect($event)" [animations]="true"
+                    [results]="this.service.dataArray" [legend]="true" [explodeSlices]="true" [labels]="true">
+                </ngx-charts-pie-chart>
+            </ng-template>
+        </mat-card-content>
+    
+        <app-footer (someEvent)="onSelected($event)" [selectArray]="this.service.selectArray"></app-footer>
+    </mat-card>

@@ -2,118 +2,20 @@
 
     <app-task></app-task>
 
-    <!-- <mat-card class="row-card">
+    <app-budget></app-budget>
+    
+    <app-team></app-team>
+  
+    <app-server></app-server>
 
-        <mat-card-header>
-            <mat-card-title>Tasks
-                <mat-icon aria-hidden="false" aria-label="Example home icon">more_vert</mat-icon>
-            </mat-card-title>
-
-
-
-            <mat-card-subtitle>Selected Param </mat-card-subtitle>
-        </mat-card-header>
+    <app-applicat></app-applicat>
 
 
-        <mat-card-content class="card-content">
-            <ngx-charts-pie-chart [view]="" (select)="onSelect($event)" [animations]="true" [results]="single"
-                [legend]="true" [explodeSlices]="true" [labels]="true">
-            </ngx-charts-pie-chart>
-        </mat-card-content>
-        <mat-card-actions>
+    <app-backup></app-backup>
 
-            <mat-form-field class="full-width">
-                <mat-label> Plese select </mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+     <app-soc></app-soc>
 
-        </mat-card-actions>
-    </mat-card>
+     <app-helpdesc></app-helpdesc>
 
-    <mat-card class="row-card">
-
-        <mat-card-header>
-            <mat-card-title>Budget </mat-card-title>
-
-            <mat-card-subtitle>Selected Param</mat-card-subtitle>
-
-        </mat-card-header>
-
-
-        <mat-card-content class="card-content">
-            <ngx-charts-bar-vertical [results]="single" (select)="onSelect($event)" [legend]="true">
-            </ngx-charts-bar-vertical>
-
-        </mat-card-content>
-        <mat-card-actions>
-
-            <mat-form-field>
-                <mat-label> Plese select </mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-
-        </mat-card-actions>
-    </mat-card>
-
-    <mat-card class="row-card">
-
-        <mat-card-header>
-            <mat-card-title>Datacenters </mat-card-title>
-            <mat-card-subtitle>Selected Param</mat-card-subtitle>
-        </mat-card-header>
-
-
-        <mat-card-content class="card-content">
-            <ngx-charts-advanced-pie-chart [view]="" [animations]="true" [results]="single" (select)="onSelect($event)">
-            </ngx-charts-advanced-pie-chart>
-        </mat-card-content>
-        <mat-card-actions>
-
-            <mat-form-field>
-                <mat-label> Plese select </mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-
-        </mat-card-actions>
-    </mat-card>
-
-    <mat-card class="row-card">
-
-        <mat-card-header>
-            <mat-card-title>IT Team </mat-card-title>
-            <mat-card-subtitle>Selected Param</mat-card-subtitle>
-        </mat-card-header>
-
-
-        <mat-card-content class="card-content">
-            <ngx-charts-bar-vertical-2d (select)="onSelect($event)" [results]="multi" [legend]="true">
-            </ngx-charts-bar-vertical-2d>
-
-        </mat-card-content>
-        <mat-card-actions>
-
-            <mat-form-field>
-                <mat-label> Plese select </mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-
-        </mat-card-actions>
-    </mat-card> -->
-
+     <app-network></app-network>
 </div>

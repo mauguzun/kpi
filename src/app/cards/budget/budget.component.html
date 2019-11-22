@@ -1,0 +1,21 @@
+<mat-card class="row-card">
+  <app-header [title]="this.service.title" [subtitle]="this.service.subtitle"></app-header>
+
+  <mat-card-content class="card-content">
+
+
+    <app-loader *ngIf="service.loader ;else chart"></app-loader>
+
+    <ng-template #chart>
+
+      <ngx-charts-area-chart-stacked [view]="view" [results]="this.service.dataArray" [xAxis]="true" [yAxis]="true"
+        [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" [xAxisLabel]="'time'" [yAxisLabel]="'value'"
+        (select)="onSelect($event)">
+
+      </ngx-charts-area-chart-stacked>
+    </ng-template>
+
+  </mat-card-content>
+
+  <app-footer (someEvent)="onSelected($event)" [selectArray]="this.service.selectArray"></app-footer>
+</mat-card>

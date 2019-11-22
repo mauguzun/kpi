@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { single, multi } from './data';
 
 @Component({
   selector: 'app-page-one',
@@ -8,19 +7,9 @@ import { single, multi } from './data';
 })
 export class PageOneComponent implements OnInit {
 
-  single: any[];
-
-  multi: any[];
-  foods = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' }
-  ];
   constructor() {
 
-    Object.assign(this, { single })
-    Object.assign(this, { multi })
-
+  
   }
 
   ngOnInit() {

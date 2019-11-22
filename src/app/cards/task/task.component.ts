@@ -9,10 +9,12 @@ import { TaskService } from './task.service';
 export class TaskComponent implements OnInit {
 
   constructor(public service: TaskService) {
-    console.log(service.selectArray)
+   
   }
 
   ngOnInit() {
   }
 
+
+  
 }

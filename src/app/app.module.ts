@@ -21,6 +21,18 @@ import { PageTwoComponent } from './page-two/page-two.component';
 import { HeaderComponent } from './card/header/header.component';
 import { FooterComponent } from './card/footer/footer.component';
 import { TaskComponent } from './cards/task/task.component';
+import { BudgetComponent } from './cards/budget/budget.component';
+import { TeamComponent } from './cards/team/team.component';
+import { LoaderComponent } from './card/loader/loader.component';
+import { ServerComponent } from './cards/server/server.component';
+import { HelpdescComponent } from './cards/helpdesc/helpdesc.component';
+import { SocComponent } from './cards/soc/soc.component';
+import { RisksComponent } from './cards/risks/risks.component';
+import { BackupComponent } from './cards/backup/backup.component';
+import { ProjectsComponent } from './cards/projects/projects.component';
+import { DatabaseComponent } from './cards/database/database.component';
+import { ApplicatComponent } from './cards/applicat/applicat.component';
+import { NetworkComponent } from './cards/network/network.component';
 
 
 @NgModule({
@@ -31,6 +43,19 @@ import { TaskComponent } from './cards/task/task.component';
     HeaderComponent,
     FooterComponent,
     TaskComponent,
+    BudgetComponent,
+    TeamComponent,
+    LoaderComponent,
+    ServerComponent,
+    HelpdescComponent,
+    SocComponent,
+   
+    RisksComponent,
+    BackupComponent,
+    ProjectsComponent,
+    DatabaseComponent,
+    ApplicatComponent,
+    NetworkComponent,
 
   ],
   imports: [

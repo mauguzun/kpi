@@ -4,7 +4,8 @@
 
         <mat-nav-list>
 
-            <a mat-list-item [routerLink]="[]"> Accounts </a>
+            <a mat-list-item [routerLink]="['/one']"> First Page </a>
+            <a mat-list-item [routerLink]="['/second']"> Second Page </a>
 
         </mat-nav-list>
 
@@ -20,11 +21,6 @@
 
     <div class="app-content" fullscreen>
 
-        <!-- Material Button -->
-
-        <!-- /Material Button -->
-        <app-page-one></app-page-one>
-        
 
         <router-outlet></router-outlet>
     </div>
