@@ -14,5 +14,5 @@ export class ApplicatComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSelected($event){}
 }

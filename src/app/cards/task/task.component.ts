@@ -3,18 +3,19 @@ import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-task',
-  templateUrl: './task.component.html',
+  templateUrl: './../pie/pie.html',
   styleUrls: ['./../../card/card.less']
 })
 export class TaskComponent implements OnInit {
 
   constructor(public service: TaskService) {
-   
+
   }
 
   ngOnInit() {
   }
 
 
+  onSelected($event){}
   
 }

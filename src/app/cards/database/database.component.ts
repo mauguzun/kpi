@@ -13,5 +13,5 @@ export class DatabaseComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSelected($event){}
 }

@@ -15,5 +15,5 @@ export class SocComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSelected($event){}
 }

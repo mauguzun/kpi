@@ -8,7 +8,7 @@
     
             <ng-template #chart>  
     
-                <ngx-charts-pie-chart [view]="" (select)="onSelect($event)" [animations]="true"
+                <ngx-charts-pie-chart [view]="" (select)="this.service.click($event)" [animations]="true"
                     [results]="this.service.dataArray" [legend]="true" [explodeSlices]="true" [labels]="true">
                 </ngx-charts-pie-chart>
             </ng-template>

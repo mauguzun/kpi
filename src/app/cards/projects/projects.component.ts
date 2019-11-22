@@ -12,5 +12,5 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSelected($event){}
 }

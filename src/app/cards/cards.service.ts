@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class CardsService {
 
- 
-  public loader =  true;
+
+  public loader = true;
   public title: string;
   public subtitle: string;
   public dataArray: any[];
@@ -20,7 +20,9 @@ export class CardsService {
 
   }
 
-  public onSelected($event) {
+  public click($event) {
     console.log($event.value);
   }
+
+  
 }

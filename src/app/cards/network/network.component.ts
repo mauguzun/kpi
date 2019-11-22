@@ -14,4 +14,5 @@ export class NetworkComponent implements OnInit {
 
   ngOnInit() {
   }
+  onSelected($event){}
 }

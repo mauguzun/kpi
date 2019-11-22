@@ -15,5 +15,5 @@ export class ServerComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSelected($event){}
 }

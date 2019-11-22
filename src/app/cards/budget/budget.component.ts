@@ -16,4 +16,8 @@ export class BudgetComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelected($event) {
+
+  }
+
 }

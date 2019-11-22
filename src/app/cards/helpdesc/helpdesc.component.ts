@@ -14,5 +14,5 @@ export class HelpdescComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSelected($event){}
 }

@@ -8,11 +8,11 @@
 
         <ng-template #chart>  
 
-            <ngx-charts-pie-chart [view]="" (select)="onSelect($event)" [animations]="true"
+            <ngx-charts-pie-chart [view]="" (select)="this.service.click($event)" [animations]="true"
                 [results]="this.service.dataArray" [legend]="true" [explodeSlices]="true" [labels]="true">
             </ngx-charts-pie-chart>
         </ng-template>
     </mat-card-content>
 
-    <app-footer (someEvent)="onSelected($event)" [selectArray]="this.service.selectArray"></app-footer>
+    <app-footer (someEvent)="this.service.onSelected($event)" [selectArray]="this.service.selectArray"></app-footer>
 </mat-card>

@@ -12,5 +12,5 @@ export class RisksComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSelected($event){}
 }
