@@ -15,5 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+  open() {
+    alert(this.title);
+  }
 }

@@ -3,7 +3,7 @@
 <mat-card-header>
     <mat-card-title>{{title}}
         <mat-icon 
-        [routerLink]="['/']"
+        (click)="open()"
         aria-hidden="false" aria-label="Example home icon">more_vert</mat-icon>
     </mat-card-title>
     <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>

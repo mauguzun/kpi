@@ -29,10 +29,13 @@ import { HelpdescComponent } from './cards/helpdesc/helpdesc.component';
 import { SocComponent } from './cards/soc/soc.component';
 import { RisksComponent } from './cards/risks/risks.component';
 import { BackupComponent } from './cards/backup/backup.component';
-import { ProjectsComponent } from './cards/projects/projects.component';
 import { DatabaseComponent } from './cards/database/database.component';
 import { ApplicatComponent } from './cards/applicat/applicat.component';
 import { NetworkComponent } from './cards/network/network.component';
+import { ProjectComponent } from './cards/project/project.component';
+import { CertificatsComponent } from './cards/certificats/certificats.component';
+import { DatacentrsComponent } from './cards/datacentrs/datacentrs.component';
+import { OnPromiseComponent } from './cards/on-promise/on-promise.component';
 
 
 @NgModule({
@@ -52,10 +55,14 @@ import { NetworkComponent } from './cards/network/network.component';
    
     RisksComponent,
     BackupComponent,
-    ProjectsComponent,
+    
     DatabaseComponent,
     ApplicatComponent,
     NetworkComponent,
+    ProjectComponent,
+    CertificatsComponent,
+    DatacentrsComponent,
+    OnPromiseComponent,
 
   ],
   imports: [

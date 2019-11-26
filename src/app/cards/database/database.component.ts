@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { DatabaseService } from './database.servcie';
+import { DatabaseService } from './database.service';
 
 @Component({
   selector: 'app-database',
-  templateUrl: './../pie/pie.html',
+  templateUrl: './database.component.html',
   styleUrls: ['./../../card/card.less']
 })
-
 export class DatabaseComponent implements OnInit {
 
   constructor(public service: DatabaseService) { }
 
   ngOnInit() {
   }
-  onSelected($event){}
+  onSelected($event) {
+
+  }
 }

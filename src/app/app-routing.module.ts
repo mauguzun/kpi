@@ -8,14 +8,15 @@ import { PageTwoComponent } from './page-two/page-two.component';
 const routes: Routes = [
 
 
-  // {
-  //   // path: '', component: AppComponent, children: [
-  //   //   { path: '', component: PageOneComponent, pathMatch: 'full' },
-  //   //   { path: 'two', component: PageTwoComponent },
+  {
+    path: '', component: AppComponent, children: [
+      // { path: '', component: PageOneComponent, pathMatch: 'full' },
+      { path: '', component: PageOneComponent },
+      { path: 'two', component: PageTwoComponent },
 
 
-  //   // ]
-  // }
+    ]
+  }
 ];
 
 @NgModule({

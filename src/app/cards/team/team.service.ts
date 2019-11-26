@@ -32,7 +32,6 @@ export class TeamService extends CardsService {
   setupData() {
 
 
-    console.log('sss')
     this.loader = true;
     this.dataArray = [];
 

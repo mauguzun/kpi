@@ -8,11 +8,9 @@
   
       <ng-template #chart>
   
-        <ngx-charts-area-chart-stacked [view]="" 
-        [results]="this.service.dataArray"
-         [xAxis]="true" [yAxis]="true"
+        <ngx-charts-area-chart-stacked [view]="" [results]="this.service.dataArray" [xAxis]="true" [yAxis]="true"
           [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" 
-          [xAxisLabel]="'Date Time'" [yAxisLabel]="'Criticity'"
+          [xAxisLabel]="'Activ till'" [yAxisLabel]="'Cost per year'"
           (select)="this.service.click($event)">
   
         </ngx-charts-area-chart-stacked>
