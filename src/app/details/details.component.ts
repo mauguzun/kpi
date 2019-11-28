@@ -17,7 +17,7 @@ export class DetailsComponent implements OnInit {
   data = null;
   tableName = null;
   id = null;
-
+  loader = true;
 
   constructor(
     private http: HttpClient,
@@ -39,16 +39,19 @@ export class DetailsComponent implements OnInit {
       }
       this.http.get(this.api.show(this.id)).subscribe(data => {
         this.data = data;
+        this.loader = false;
+
       })
 
     })
   }
   submit() {
 
-  
+    this.loader = true;
+
       this.http.put(this.api.put(this.id), this.data ).subscribe(res => {
         // todo updat or  ?
-        console.log(res);
+        this.loader = false;
         this.router.navigate(['/table',this.tableName]);
       })
    

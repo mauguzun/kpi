@@ -1,14 +1,11 @@
-<mat-card class="row-card">
 
-    <mat-card-content *ngIf="!dataSource">
-        <app-loader></app-loader>
-    </mat-card-content>
+<app-loader *ngIf="loader"  ></app-loader>
+    
 
-    <mat-card-content *ngIf="dataSource">
+<mat-card class="row-card" *ngIf="dataSource && !loader">
 
 
-
-
+    <mat-card-content >
         <mat-form-field>
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
         </mat-form-field>

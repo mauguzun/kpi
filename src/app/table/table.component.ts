@@ -16,10 +16,10 @@ export class TableComponent implements OnInit {
 
 
   tableName = 'kpiteam';
- 
+
   displayedColumns: string[] = null;
   dataSource: MatTableDataSource<any> = null;
-
+  loader = true;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -27,7 +27,7 @@ export class TableComponent implements OnInit {
 
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar,
-     private router: Router ,private api :ApidataService) {
+    private router: Router, private api: ApidataService) {
 
     this.http.get(api.base()).subscribe(data => {
 
@@ -41,7 +41,7 @@ export class TableComponent implements OnInit {
 
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-
+      this.loader = false;
       this.snackBar.open('table loaded...', null, {
         duration: 2000
       });
@@ -66,13 +66,18 @@ export class TableComponent implements OnInit {
 
   delete(id: string) {
 
+
+    this.loader = true;
     this.http.delete(this.api.delete(id)).subscribe(data => {
       let answer = 'deleted ';
+      this.loader = false;
       if (data === 1) {
         this.dataSource.data = this.dataSource.data.filter(x => x.ID !== id);
       } else {
         answer = 'error';
+
       }
+
       this.snackBar.open(answer, null, { duration: 2000 });
     });
   }
