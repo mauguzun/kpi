@@ -4,13 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 import {
   MatButtonModule,
   MatListModule,
   MatProgressSpinnerModule,
-  MatGridListModule,
-  MatCheckboxModule, MatSidenavModule, MatIconModule, MatCardModule, MatToolbarModule, MatSelectModule, MatSnackBarModule
+  MatGridListModule, MatPaginatorModule,
+  MatCheckboxModule, MatSidenavModule, MatIconModule,
+  MatCardModule, MatToolbarModule, MatSelectModule,
+  MatSnackBarModule, MatTableModule, MatFormFieldModule,
+  MatInputModule, MatSortModule,
+    
 } from '@angular/material';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -36,8 +40,9 @@ import { ProjectComponent } from './cards/project/project.component';
 import { CertificatsComponent } from './cards/certificats/certificats.component';
 import { DatacentrsComponent } from './cards/datacentrs/datacentrs.component';
 import { OnPromiseComponent } from './cards/on-promise/on-promise.component';
-
-
+import { TableComponent } from './table/table.component';
+import { DetailsComponent } from './details/details.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,10 +57,10 @@ import { OnPromiseComponent } from './cards/on-promise/on-promise.component';
     ServerComponent,
     HelpdescComponent,
     SocComponent,
-   
+
     RisksComponent,
     BackupComponent,
-    
+
     DatabaseComponent,
     ApplicatComponent,
     NetworkComponent,
@@ -63,24 +68,34 @@ import { OnPromiseComponent } from './cards/on-promise/on-promise.component';
     CertificatsComponent,
     DatacentrsComponent,
     OnPromiseComponent,
-
+    TableComponent,
+    DetailsComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatGridListModule,
     MatProgressSpinnerModule,
     MatListModule,
+    MatSnackBarModule,
     MatButtonModule,
     MatCheckboxModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatIconModule,
+    MatSortModule,
     MatToolbarModule,
     MatCardModule,
-    MatSelectModule, MatSnackBarModule,
-    NgxChartsModule
-
+    MatSelectModule,
+    MatSnackBarModule,
+    NgxChartsModule,
+    MatTableModule,
+    NoopAnimationsModule,
+    MatPaginatorModule,
+    HttpClientModule
   ],
 
   providers: [],

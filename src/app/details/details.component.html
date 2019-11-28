@@ -1,0 +1,39 @@
+<mat-card class="row-card">
+
+    <mat-card-content *ngIf="data == null ">
+        <app-loader></app-loader>
+    </mat-card-content>
+
+    <mat-card-content *ngIf="data != null">
+
+        <div class="example-container" *ngFor="let item of data">
+
+            <mat-form-field *ngIf="item.type ==='input'">
+                <input matInput 
+                [placeholder]="item.name" 
+                [(ngModel)]="item.value"
+                [value]="item.value" [maxLength]="item.max">
+            </mat-form-field>
+
+
+            <mat-form-field *ngIf="item.type ==='text'">
+                    <textarea matInput [maxLength]="item.max"     [(ngModel)]="item.value" [placeholder]="item.name" ></textarea>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="item.type ==='select'">
+                <mat-select   [(value)]="item.value"  [placeholder]="item.name">
+                    <mat-option 
+                    *ngFor="let key of Object.values(item.options) "
+                    >v</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+
+
+        <button (click)="submit()" mat-button color="warn">Warn</button>
+
+
+    </mat-card-content>
+</mat-card>
