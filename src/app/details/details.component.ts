@@ -18,17 +18,23 @@ export class DetailsComponent implements OnInit {
   tableName = null;
   id = null;
   loader = true;
+  formValid = false;
 
   constructor(
     private http: HttpClient,
-    private current: ActivatedRoute, 
+    private current: ActivatedRoute,
     private api: ApidataService,
     private router: Router
-    ) {
+  ) {
 
 
   }
 
+  checkIsValid() {
+
+    this.formValid =  this.data.filter(x => x.req === true && x.value === '').length ===  0 ;
+
+  }
 
   ngOnInit() {
     this.current.params.subscribe(data => {
@@ -47,14 +53,16 @@ export class DetailsComponent implements OnInit {
   }
   submit() {
 
+
+  
     this.loader = true;
 
-      this.http.put(this.api.put(this.id), this.data ).subscribe(res => {
-        // todo updat or  ?
-        this.loader = false;
-        this.router.navigate(['/table',this.tableName]);
-      })
-   
+    this.http.put(this.api.put(this.id), this.data).subscribe(res => {
+      // todo updat or  ?
+      this.loader = false;
+      this.router.navigate(['/table', this.tableName]);
+    })
+
 
   }
 }

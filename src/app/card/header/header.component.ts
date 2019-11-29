@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ApidataService } from 'src/app/apidata.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +12,12 @@ export class HeaderComponent implements OnInit {
 
   @Input() title;
   @Input() subtitle;
-  constructor() { }
+  constructor(private apiService: ApidataService, private router: Router) { }
 
   ngOnInit() {
   }
-
+ 
   open() {
-    alert(this.title);
+    this.router.navigate(['table', this.apiService.getTalbe(this.title)])
   }
 }

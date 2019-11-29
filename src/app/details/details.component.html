@@ -7,17 +7,34 @@
 
         <div class="example-container" *ngFor="let item of data">
 
-            <mat-form-field *ngIf="item.type ==='input'">
+            <mat-form-field 
+           
+            *ngIf="item.type ==='input'" >
                 <input matInput 
+                [required]="item.req"
                 [placeholder]="item.name" 
                 [(ngModel)]="item.value"
+                (keyup)="checkIsValid()"
                 [value]="item.value" [maxLength]="item.max">
+             
+                <mat-hint align="end"> 
+                    {{item.value.trim() ===  '' && item.req  ? 'false' : 'true'}}   
+                    {{item.value?.length || 0}}/ {{item.max }}</mat-hint>
+            
             </mat-form-field>
 
 
             <mat-form-field *ngIf="item.type ==='text'">
-                    <textarea matInput [maxLength]="item.max"     [(ngModel)]="item.value" [placeholder]="item.name" ></textarea>
-            </mat-form-field>
+                    <textarea matInput [maxLength]="item.max"  
+                    [required]="item.req"
+                    (keyup)="checkIsValid()"
+                    [(ngModel)]="item.value" [placeholder]="item.name" ></textarea>
+           
+                    <mat-hint align="end"> 
+                            {{item.value.trim() ===  '' && item.req  ? 'false' : 'true'}}   
+                            {{item.value?.length || 0}}/ {{item.max }}</mat-hint>
+                    
+                </mat-form-field>
 
             <mat-form-field *ngIf="item.type ==='select'">
                 <mat-select   [(value)]="item.value"  [placeholder]="item.name">
@@ -31,8 +48,9 @@
 
 
 
-        <button (click)="submit()" mat-button color="warn">Warn</button>
-
+        <button  
+         [disabled]="!formValid"
+        (click)="submit()"  mat-raised-button color="accent">Update</button>
 
     </mat-card-content>
 </mat-card>

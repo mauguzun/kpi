@@ -14,7 +14,7 @@ export class TeamService extends CardsService {
     super();
 
 
-    this.title = 'It team ';
+    this.title = 'It team';
     this.subtitle = 'Sort by location';
 
 

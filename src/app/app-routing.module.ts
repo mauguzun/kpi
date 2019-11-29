@@ -15,7 +15,7 @@ const routes: Routes = [
       // { path: '', component: PageOneComponent, pathMatch: 'full' },
       { path: '', component: PageOneComponent },
       { path: 'two', component: PageTwoComponent },
-
+      { path: 'not_found', component: PageTwoComponent }, 
       { path: 'table/:tab', component: TableComponent },
       { path: 'details/:tab', component: DetailsComponent },
       { path: 'details/:tab/:id', component: DetailsComponent },

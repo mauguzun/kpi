@@ -22,7 +22,7 @@ export class ApplicatService extends CardsService {
             },
 
         ];
-        this.title = 'Application';
+        this.title = 'Applications';
         this.subtitle = 'Total of Actives Applications';
 
 

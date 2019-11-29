@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatPaginator, MatSnackBar } from '@angular/material';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ApidataService } from '../apidata.service';
 
 @Component({
@@ -27,25 +27,38 @@ export class TableComponent implements OnInit {
 
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar,
+    private activeRouter: ActivatedRoute,
     private router: Router, private api: ApidataService) {
 
-    this.http.get(api.base()).subscribe(data => {
 
-      let columns = [];
-      columns = data['columns'];
-      columns.push('d');
+    this.activeRouter.params.subscribe((params) => {
 
-      this.displayedColumns = columns;
+      if (params.tab && this.api.checkPage(params.tab)) {
 
-      this.dataSource = new MatTableDataSource(data['team']);
+        this.tableName = params.tab;
+        this.api.setControlller(this.tableName);
+        this.http.get(api.base()).subscribe(data => {
 
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-      this.loader = false;
-      this.snackBar.open('table loaded...', null, {
-        duration: 2000
-      });
+          let columns = [];
+          columns = data['columns'];
+          columns.push('d');
+
+          this.displayedColumns = columns;
+
+          this.dataSource = new MatTableDataSource(data['data']);
+
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          this.loader = false;
+          this.snackBar.open('table loaded...', null, { duration: 2000 });
+        });
+      } else {
+        this.router.navigate(['not_found']);
+      }
+
     });
+
+
     // Assign the data to the data source for the table to render
 
   }
@@ -87,7 +100,7 @@ export class TableComponent implements OnInit {
   }
   edit(id) {
 
-    this.router.navigate(['/details', this.tableName, id])
+    this.router.navigate(['/details', this.tableName, id]);
   }
 
 
