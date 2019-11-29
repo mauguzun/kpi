@@ -7,7 +7,8 @@ import { element } from 'protractor';
 export class ApidataService {
   constructor() { }
 
-  private main = 'http://localhost/kpi/public/';
+  // private main = 'http://localhost/kpi/public/';
+  private main = 'http://kpiserver.asl.nl.eu.org/';
   private controller = "";
 
   protected tables = [

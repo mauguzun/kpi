@@ -32,6 +32,10 @@ export class DetailsComponent implements OnInit {
 
   checkIsValid() {
 
+    console.log(this.data.filter(x => x.req === true && x.value === '').length);
+    console.log(this.data.filter(x => x.req === true && x.value === ''));
+    
+
     this.formValid =  this.data.filter(x => x.req === true && x.value === '').length ===  0 ;
 
   }
@@ -40,6 +44,7 @@ export class DetailsComponent implements OnInit {
     this.current.params.subscribe(data => {
 
       this.tableName = data.tab;
+      this.api.setControlller(this.tableName);
       if (data.id) {
         this.id = data.id;
       }
