@@ -19,8 +19,8 @@
                 [value]="item.value" [maxLength]="item.max">
              
                 <mat-hint align="end"> 
-                    {{item.value.trim() ===  '' && item.req  ? 'false' : 'true'}}   
-                    {{item.value?.length || 0}}/ {{item.max }}</mat-hint>
+                    {{item.value && item.value.trim() ===  '' && item.req  ? 'false' : 'true'}}   
+                    {{item.value && item.value?.length || 0}}/ {{item.max }}</mat-hint>
             
             </mat-form-field>
 
@@ -38,11 +38,10 @@
                 </mat-form-field>
 
             <mat-form-field *ngIf="item.input ==='select'">
-                <mat-select   [(value)]="item.value"  [placeholder]="item.name">
-                    <mat-option 
-                    *ngFor="let key of Object.values(item.options) "
-                    >v</mat-option>
-                </mat-select>
+                <mat-select     (keyup)="checkIsValid()"  [(value)]="item.value"  [placeholder]="item.name">
+                    <mat-option *ngFor="let op of item.options" 
+                     [value]="op.value" >{{op.text}}</mat-option>
+                 </mat-select>
             </mat-form-field>
 
         </div>

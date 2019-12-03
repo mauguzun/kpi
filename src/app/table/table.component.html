@@ -1,7 +1,7 @@
 <app-loader *ngIf="loader"></app-loader>
+       
 
-
-<mat-card class="row-card" *ngIf="dataSource && !loader">
+<mat-card class="row-card" *ngIf="dataSource && !loader"   >
 
 
     <mat-card-content>
@@ -10,11 +10,10 @@
         </mat-form-field>
 
 
-        <button align="end" (click)="add()" mat-fab>
-            <mat-icon>add</mat-icon>
-        </button>
+        <button mat-raised-button  (click)="add()" color="warn"> + </button>
 
-        <div class="mat-elevation-z8">
+
+
             <table mat-table [dataSource]="dataSource" matSort>
 
 
@@ -45,7 +44,11 @@
                 </tr>
             </table>
 
-            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-        </div>
+           
+
     </mat-card-content>
+
+    
 </mat-card>
+
+<mat-paginator [hidden]="!dataSource && loader"  [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

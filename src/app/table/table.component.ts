@@ -31,6 +31,7 @@ export class TableComponent implements OnInit {
     private router: Router, private api: ApidataService) {
 
 
+ 
     this.activeRouter.params.subscribe((params) => {
 
       if (params.tab && this.api.checkPage(params.tab)) {
@@ -44,12 +45,16 @@ export class TableComponent implements OnInit {
           columns.push('d');
 
           this.displayedColumns = columns;
-
           this.dataSource = new MatTableDataSource(data['data']);
+
+          this.loader = false;
+
 
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
-          this.loader = false;
+
+
+        
           this.snackBar.open('table loaded...', null, { duration: 2000 });
         });
       } else {

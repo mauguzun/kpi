@@ -59,6 +59,7 @@ export class DetailsComponent implements OnInit {
   submit() {
 
 
+
   
     this.loader = true;
 
