@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {
   MatButtonModule,
   MatListModule,
@@ -43,6 +43,19 @@ import { OnPromiseComponent } from './cards/on-promise/on-promise.component';
 import { TableComponent } from './table/table.component';
 import { DetailsComponent } from './details/details.component';
 import { FormsModule } from '@angular/forms';
+import { AuthInterceptor } from './auth.interceptor';
+
+
+
+
+
+const intProvider  : Provider = {
+  provide:HTTP_INTERCEPTORS,
+  multi:true,
+  useClass :AuthInterceptor
+} 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,7 +113,7 @@ import { FormsModule } from '@angular/forms';
 
   ],
 
-  providers: [],
+  providers: [intProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
