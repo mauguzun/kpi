@@ -5,6 +5,7 @@ import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
 import { DetailsComponent } from './details/details.component';
 import { TableComponent } from './table/table.component';
+import { PleaseLoginComponent } from './please-login/please-login.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
       // { path: '', component: PageOneComponent, pathMatch: 'full' },
       { path: '', component: PageOneComponent },
       { path: 'two', component: PageTwoComponent },
+      { path: 'pls-login', component: PleaseLoginComponent },
       { path: 'not_found', component: PageTwoComponent }, 
       { path: 'table/:tab', component: TableComponent },
       { path: 'details/:tab', component: DetailsComponent },

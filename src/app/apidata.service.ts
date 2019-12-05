@@ -7,9 +7,11 @@ import { element } from 'protractor';
 export class ApidataService {
   constructor() { }
 
-  //private main = 'http://localhost/kpi/public/';
-  private main = 'http://kpiserver.asl.nl.eu.org/';
+ //private main = 'http://localhost/kpi/public/';
+private main = 'http://kpiserver.asl.nl.eu.org/';
   private controller = "";
+
+
 
   protected tables = [
     { title: 'Applications', table: 'applications' },
@@ -39,7 +41,7 @@ export class ApidataService {
   }
 
   delete(id) {
-    return this.main + this.controller + 'delete/' + id;
+    return this.main + this.controller + 'delete/' + id ;
   }
 
   show(id = null) {
@@ -51,6 +53,10 @@ export class ApidataService {
   }
   post() {
     return this.main + this.controller + 'create/';
+  }
+
+  login(){
+    return this.main +  'auth/json_login'; 
   }
 
   getTalbe(title: string): string {
@@ -66,4 +72,5 @@ export class ApidataService {
     this.controller = table + '/';
   }
 
+ 
 }

@@ -1,0 +1,49 @@
+<app-loader *ngIf="loader"></app-loader>
+
+
+<mat-card *ngIf="!loader" class="row-card" style="width: 70%;margin:10% auto;">
+
+
+    <mat-card-content>
+        <div class="example-container" class="message">
+          {{message}}
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput type="email" placeholder="Enter your email" formControlName="email" required>
+                    
+                    
+                    <mat-hint *ngIf="form.get('email').touched && form.get('email').invalid" 
+                   >
+                            <small *ngIf="form.get('email').errors.required">Email required</small>
+                
+                            <small *ngIf="form.get('email').errors.email">Email not valid</small>
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput formControlName="password" type="password" placeholder="Enter your password"
+                        required>
+                        <mat-hint *ngIf="form.get('password').touched && form.get('password').invalid" 
+                        >
+                                 <small *ngIf="form.get('password').errors.required">Password required</small>
+                     
+                         </mat-hint>
+                </mat-form-field>
+             
+            </div>
+            <div class="example-container">
+                <br>
+                <button [disabled]="form.invalid " mat-raised-button color="primary">Login</button>
+            </div>
+        </form>
+
+    </mat-card-content>
+
+
+
+</mat-card>

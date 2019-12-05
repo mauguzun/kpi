@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,16 @@ export class AppComponent {
   public title = 'kpi';
   public header = new Date();
 
-  constructor(private router: Router) {
+  constructor(private router: Router,public login :LoginService) {
 
   }
 
   linkClick(link: string) {
-    console.log(this.input.toggle());
-    console.log(link);
     this.router.navigate([link])
+  }
+
+  logout(){
+    this.login.logout();
   }
 }
 

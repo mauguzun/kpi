@@ -1,22 +1,12 @@
 <mat-sidenav-container fullscreen>
 
-    <mat-sidenav
-    
-     #sidenav mode="over" class="app-sidenav" color="primary">
+    <mat-sidenav #sidenav mode="over" class="app-sidenav" color="primary">
 
         <mat-nav-list>
 
-            <a
-             mat-list-item
-             (click)="linkClick('/')"
-          
-             > First Page </a>
-            <a mat-list-item
-            (click)="linkClick('/two')"
+            <a mat-list-item (click)="linkClick('/')"> First Page </a>
+            <a mat-list-item (click)="linkClick('/two')"> Second Page </a>
 
-            
-             > Second Page </a>
-          
         </mat-nav-list>
 
     </mat-sidenav>
@@ -26,10 +16,13 @@
             <i class="material-icons">menu</i>
         </button>
         <span class="title">{{header|date:'EEEE, MMMM d, y HH:mm'}}</span>
-
+        <span (click)="logout()"  class="title logout" *ngIf="login.isLogin()">
+               logout
+        </span>
+        
     </mat-toolbar>
 
-    
+
     <div class="app-content" fullscreen>
         <!-- <app-page-one></app-page-one> -->
         <router-outlet></router-outlet>

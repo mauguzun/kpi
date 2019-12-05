@@ -12,22 +12,19 @@ export class AuthInterceptor implements HttpInterceptor {
 
     constructor( private router: Router) { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<import('@angular/common/http').HttpEvent<any>> {
-        // if lofing
-   
         req = req.clone({
                 setParams: {
-                    auth: 'omg'
+                    token: localStorage.getItem('token')
+              //      token: '493eb9248f8145a77f5adf324d1c4933'
                 }
         });
-      
         return next.handle(req)
             .pipe(
-                tap(()=>{console.log("int")}),
                 catchError((error: HttpErrorResponse) => {
-                    console.log("int errror");
+                    console.log("int errror" + error);
                     if(error.status === 401){
-                        
-                    }
+                        this.router.navigate(['/pls-login'])
+                    } 
                     return throwError(error);
                 })
         )

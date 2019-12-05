@@ -42,8 +42,9 @@ import { DatacentrsComponent } from './cards/datacentrs/datacentrs.component';
 import { OnPromiseComponent } from './cards/on-promise/on-promise.component';
 import { TableComponent } from './table/table.component';
 import { DetailsComponent } from './details/details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './auth.interceptor';
+import { PleaseLoginComponent } from './please-login/please-login.component';
 
 
 
@@ -82,7 +83,8 @@ const intProvider  : Provider = {
     DatacentrsComponent,
     OnPromiseComponent,
     TableComponent,
-    DetailsComponent
+    DetailsComponent,
+    PleaseLoginComponent
   ],
   imports: [
     FormsModule,
@@ -109,7 +111,8 @@ const intProvider  : Provider = {
     NoopAnimationsModule,
     MatPaginatorModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
 
   ],
 

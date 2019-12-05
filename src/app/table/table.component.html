@@ -51,4 +51,4 @@
     
 </mat-card>
 
-<mat-paginator [hidden]="!dataSource && loader"  [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+<mat-paginator [hidden]="!dataSource || loader"  [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
