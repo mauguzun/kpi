@@ -19,6 +19,7 @@ export class AppComponent {
   }
 
   linkClick(link: string) {
+    console.log(this.input.toggle());
     this.router.navigate([link])
   }
 
